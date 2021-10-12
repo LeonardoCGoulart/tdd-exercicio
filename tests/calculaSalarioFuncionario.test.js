@@ -8,11 +8,11 @@ describe('calculaSalarioFuncionario', () => {
         const funcionario = {
             nome: "Mario",
             email: "mario@hotmail.com",
-            salario: 3000.00,
+            salario: 4500.00,
             cargo: "desenvolvedor"
         };
         const salarioFinal = calc.calculaSalario(funcionario.salario, funcionario.cargo);
-        expect(salarioFinal).toBe(4000.00); // 20% de redução
+        expect(salarioFinal).toBe(3600.00); // 20% de redução
     });
 
     test('cargo desenvolvedor com salario < 3000', () => {
@@ -20,11 +20,11 @@ describe('calculaSalarioFuncionario', () => {
         const funcionario = {
             nome: "Mario",
             email: "mario@hotmail.com",
-            salario: 2000.00,
+            salario: 1000.00,
             cargo: "desenvolvedor"
         };
         const salarioFinal = calc.calculaSalario(funcionario.salario, funcionario.cargo);
-        expect(salarioFinal).toBe(1800.00); // 10% de redução
+        expect(salarioFinal).toBe(900.00); // 10% de redução
     });
 
 
