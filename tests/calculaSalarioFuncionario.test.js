@@ -1,3 +1,4 @@
+const CalculadoraSalario = require("../lib/CalculadoraSalario");
 describe('calculaSalarioFuncionario', () => {
 
     // testes referentes ao Desenvolvedor
