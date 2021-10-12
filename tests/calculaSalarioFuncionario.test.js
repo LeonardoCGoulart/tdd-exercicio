@@ -79,6 +79,32 @@ describe('calculaSalarioFuncionario', () => {
         expect(salarioFinal).toBe(850.00); // 15% de redução
     });
 
+    // testes referentes ao gerente
+
+    test('cargo gerente com salario >= 5000', () => {
+        calc = new CalculadoraSalario();
+        const funcionario = {
+            nome: "Ana",
+            email: "ana@hotmail.com",
+            salario: 5000.00,
+            cargo: "gerente"
+        };
+        const salarioFinal = calc.calculaSalario(funcionario.salario, funcionario.cargo);
+        expect(salarioFinal).toBe(3500.00); // 30% de redução
+    });
+
+    test('cargo testador com salario < 5000', () => {
+        calc = new CalculadoraSalario();
+        const funcionario = {
+            nome: "Ana",
+            email: "ana@hotmail.com",
+            salario: 2500.00,
+            cargo: "gerente"
+        };
+        const salarioFinal = calc.calculaSalario(funcionario.salario, funcionario.cargo);
+        expect(salarioFinal).toBe(2000.00); // 20% de redução
+    });
+
 
 
 });
